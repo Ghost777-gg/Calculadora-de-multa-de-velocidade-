@@ -25,7 +25,8 @@ Para rodar este projeto, você precisará de um compilador C++ (como o `g++` no 
 
 1.  **Clone o Repositório:**
     ```bash
-    git clone [SEU LINK DO REPOSITÓRIO AQUI]
+    git clone https://github.com/Ghost777-gg/Calculadora-de-multa-de-velocidade-.git
+    
     cd nome-do-seu-repositorio
     ```
 
