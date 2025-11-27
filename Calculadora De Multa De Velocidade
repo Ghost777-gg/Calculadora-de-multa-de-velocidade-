@@ -1,0 +1,85 @@
+#include <iostream>
+#include <string>
+#include <iomanip> 
+
+using namespace std;
+
+int main(){
+	
+	double kilometro;
+	double tempo;
+	
+	
+	const double MultaMedia = 130.16;
+	const double MultaGrave = 195.23;
+	const double MultaGravissima = 293.47 * 3; 
+	
+	
+	cout << fixed << setprecision(2);
+
+	cout << "==========================================" << endl;
+	cout << "        CALCULADORA DE VELOCIDADE         " << endl;
+	cout << "==========================================" << endl;
+
+
+	cout << "Quantos kilometros percorridos?  ";
+	cin >> kilometro;
+	
+	cout << "Em quantas horas foi percorrido? ";
+	cin >> tempo;
+	
+
+	double Vm = kilometro / tempo;
+	
+	double limite;
+	
+	cout << "Qual e o limite de velocidade da via?  ";
+	cin >> limite;
+	
+	cout << "------------------------------------------" << endl;
+	
+	
+	cout << "RESUMO DA VIAGEM:" << endl;
+	cout << "   Limite da Via:      " << limite << " Km/h" << endl;
+	cout << "   Velocidade Media:   " << Vm << " Km/h" << endl;
+	cout << "------------------------------------------" << endl;
+	
+	
+	if (Vm > limite){
+		cout << "!! ALERTA: HOUVE EXCESSO DE VELOCIDADE !!" << endl;
+		
+		
+		double porcent = (Vm - limite)/ limite *100;
+		
+		cout << "   Porcentagem de Excesso: " << porcent << " %" << endl;
+		cout << "------------------------------------------" << endl;
+
+		
+		if (porcent <= 20){
+			cout << "CLASSIFICACAO: MULTA MEDIA" << endl;
+			cout << "   Penalidade: Menos 4 pontos na CNH." << endl;
+			cout << "   Valor: R$ " << MultaMedia << endl;
+		}
+		
+		
+		if(porcent > 20  && porcent < 50){
+			cout << "CLASSIFICACAO: MULTA GRAVE" << endl;
+			cout << "   Penalidade: Menos 5 pontos na CNH." << endl;
+			cout << "   Valor: R$ " << MultaGrave << endl;
+		}
+		
+		
+		if (porcent >= 50){
+			cout << "CLASSIFICACAO: MULTA GRAVISSIMA" << endl;
+			cout << "   Penalidade: Menos 7 pontos na CNH e SUSPENSAO IMEDIATA." << endl;
+			cout << "   Valor: R$ " << MultaGravissima << " (R$ 293,47 x 3)" << endl;
+		}
+	}
+	else{
+		cout << "PARABENS! A velocidade media ficou DENTRO do limite." << endl;
+	}
+	
+	cout << "==========================================" << endl;
+			
+	return 0;
+}
